@@ -8,7 +8,7 @@ class Entity {
         this.y = 5;
     }
 
-    update(dt) {
+    update(dt) { //keep player inbounds
         this.isOutOfBoundsX = this.x > 5;
         this.isOutOfBoundsY = this.y < 1 || this.y > 5;
     }
@@ -33,10 +33,11 @@ class Enemy extends Entity {
     constructor() {
         super();
         this.sprite = 'images/enemy-bug.png';
-        this.x = 4;
-        this.y = 6;
+        //this.x = 4;
+        //this.y = 6;
     }
 }
+
 //TODO: player needs to render
 //TODO: bugs need to render
 //TODO: player needs to move
