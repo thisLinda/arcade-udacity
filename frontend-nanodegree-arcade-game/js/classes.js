@@ -30,11 +30,11 @@ class Player extends Entity {
 }
 
 class Enemy extends Entity {
-    constructor() {
+    constructor(x, y) {
         super();
         this.sprite = 'images/enemy-bug.png';
-        this.x = 2;
-        this.y = 5;
+        this.x = x;
+        this.y = y;
     }
 }
 /*
