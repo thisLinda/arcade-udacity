@@ -5,22 +5,22 @@ TODO: update var
  * a simple "caching" layer so it will reuse cached images if you attempt
  * to load the same image multiple times.
  */
-(function() {
-    var resourceCache = {};
+(function () {
+    let resourceCache = {};
     //var loading = [];
-    var readyCallbacks = [];
+    let readyCallbacks = [];
 
     /* This is the publicly accessible image loading function. It accepts
      * an array of strings pointing to image files or a string for a single
      * image. It will then call our private image loading function accordingly.
      */
     function load(urlOrArr) { //NOTE: this function is complete
-        if(urlOrArr instanceof Array) {
+        if (urlOrArr instanceof Array) {
             /* If the developer passed in an array of images
              * loop through each value and call our image
              * loader on that image file
              */
-            urlOrArr.forEach(function(url) {
+            urlOrArr.forEach(function (url) {
                 _load(url);
             });
         } else {
@@ -31,12 +31,12 @@ TODO: update var
             _load(urlOrArr);
         }
     }
-    
+
     /* This is our private image loader function, it is
      * called by the public image loader function. NOTE: it is complete
      */
     function _load(url) {
-        if(resourceCache[url]) {
+        if (resourceCache[url]) {
             /* If this URL has been previously loaded it will exist within
              * our resourceCache array. Just return that image rather
              * re-loading the image.
@@ -47,7 +47,7 @@ TODO: update var
              * within our cache; we'll need to load this image.
              */
             var img = new Image();
-            img.onload = function() {
+            img.onload = function () {
                 /* Once our image has properly loaded, add it to our cache
                  * so that we can simply return this image if the developer
                  * attempts to load this file in the future.
@@ -57,8 +57,10 @@ TODO: update var
                 /* Once the image is actually loaded and properly cached,
                  * call all of the onReady() callbacks we have defined.
                  */
-                if(isReady()) {
-                    readyCallbacks.forEach(function(func) { func(); });
+                if (isReady()) {
+                    readyCallbacks.forEach(function (func) {
+                        func();
+                    });
                 }
             };
 
@@ -84,9 +86,9 @@ TODO: update var
      */
     function isReady() {
         var ready = true;
-        for(var k in resourceCache) {
-            if(resourceCache.hasOwnProperty(k) &&
-               !resourceCache[k]) {
+        for (var k in resourceCache) {
+            if (resourceCache.hasOwnProperty(k) &&
+                !resourceCache[k]) {
                 ready = false;
             }
         }

@@ -8,7 +8,7 @@ class Entity {
         this.y = 5;
     }
 
-    update(dt) { //keep player inbounds
+    update(dt) { //bugs move and reset
         this.isOutOfBoundsX = this.x > 5;
         this.isOutOfBoundsY = this.y < 1 || this.y > 5;
     }
@@ -33,10 +33,24 @@ class Enemy extends Entity {
     constructor() {
         super();
         this.sprite = 'images/enemy-bug.png';
-        //this.x = 4;
-        //this.y = 6;
+        this.x = 2;
+        this.y = 5;
     }
 }
+/*
+//handleInput code from Sandra Israel https://github.com/sandraisrael/fend-arcade-game/blob/master/js/app.js
+handleInput() {
+    if (pressedKey === 'left' && this.x > 33) {
+        this.x -= 100;
+    } else if (pressedKey === 'up' && this.y > 18) {
+        this.y -= 80;
+    } else if (pressedKey === 'right' && this.x < 400) {
+        this.x += 100;
+    } else if (pressedKey === 'down' && this.y < 380) {
+        this.y += 80;
+    }
+}
+*/
 
 //TODO: player needs to render
 //TODO: bugs need to render
