@@ -1,4 +1,8 @@
 //use ES6 classes rather than this! 9/3/18 code for Enemy moved into classes.js, TODO: update render for enemy & player TODO: need to create for player, TODO: 
+const enemyOne = new Enemy1();
+const enemyTwo = new Enemy2();
+const enemyThree = new Enemy3();
+const allEnemies = [];
 const player = new Player();
 
 // This listens for key presses and sends the keys to your
