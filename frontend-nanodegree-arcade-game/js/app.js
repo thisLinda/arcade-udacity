@@ -3,14 +3,15 @@
 /* The function to render the enemies is looping through the array allEnemies, so you have to push your enemy objects in there before they can be seen.
 code for variables/push from Slack conversation 9/4/18 with Amanda Hasenzahl
 */
+//https://www.html5canvastutorials.com/advanced/html5-canvas-get-image-data-tutorial/
+//https://docs.code.org/applab/drawImage/
 
-const enemy1 = new Enemy(0, 0.8, 100 * (Math.random() * 0.04));
-const enemy2 = new Enemy(1, 1.8, 100 * (Math.random() * 0.05));
-const enemy3 = new Enemy(2, 2.8, 100 * (Math.random() * 0.06));
+const enemy1 = new Enemy(0, 0.6, 100 * (Math.random() * 0.04));
+const enemy2 = new Enemy(1, 1.5, 100 * (Math.random() * 0.08));
+const enemy3 = new Enemy(2, 2.4, 100 * (Math.random() * 0.12));
 const player = new Player();
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3);
-console.log(allEnemies);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.

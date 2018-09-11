@@ -59,8 +59,9 @@ class Enemy extends Entity {
     constructor(x, y) {
         super();
         this.sprite = 'images/enemy-bug.png';
-        this.x = (1, 2, 3);
-        this.y = (1, 2, 3);
+        this.x = x;
+        this.y = y * 1.15;
+        this.pace = Math.floor(Math.random());
     }
 
     update(dt) { //can update to make the bugs move at different rates(random method)/start at different places on x axis
