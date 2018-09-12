@@ -56,20 +56,22 @@ class Player extends Entity {
 //https://jlongster.com/Making-Sprite-based-Games-with-Canvas
 //https://code.tutsplus.com/articles/html5-avoider-game-tutorial-multiple-moving-enemies--active-9956
 class Enemy extends Entity {
-    constructor(x, y) {
+    constructor(x, y, speed) {
         super();
         this.sprite = 'images/enemy-bug.png';
         this.x = x;
-        this.y = y * 1.15;
-        this.pace = Math.floor(Math.random());
+        this.y = y;
+        this.speed = speed;
+        //this.rate = Math.floor((Math.random() * 300) + 75);
     }
 
     update(dt) { //can update to make the bugs move at different rates(random method)/start at different places on x axis
         super.update();
         if (this.outOfBoundsX) {
             this.x = -1;
-        } else
-            this.x += dt;
+        } else {
+            this.x += this.speed * dt;
+        }
     }
 }
 
