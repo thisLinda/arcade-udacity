@@ -8,9 +8,22 @@ class Entity {
         this.y = 5;
     }
 
-    update(dt) { //bugs move and reset
+    update(dt) {
         this.outOfBoundsX = this.x > 5;
-        this.outOfBoundsY = this.y < 1; //|| //this.y > 5;
+        this.outOfBoundsY = this.y < 1;
+
+        /*for (let enemy of allEnemies) {
+            let deltaX = this.x - enemy.x - 15;
+            let deltaY = this.y - enemy.y - 20;
+            let distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            if (distance < 56) {
+                console.log('hit');
+            }
+        }
+        if (this.y < 10) {
+            console.log('yippee!');
+            this.y = 410;
+        }*/
     }
 
     render() {
@@ -19,10 +32,18 @@ class Entity {
 
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
     //https://medium.com/@assertchris/collision-detection-b8bf655cb672
+    //collision code instructed by R.Bloomfield
 
-    //TODO: need collision code
+    /*checkCollisions(playerEnemy) {
+        if (this.y === playerEnemy.y) {
+            if (this.x >= playerEnemy.x - 0.5 && this.x <= playerEnemy.x + 0.5) {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }*/
 }
-
 
 class Player extends Entity {
     constructor() {
@@ -43,26 +64,6 @@ class Player extends Entity {
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
     //https:/ / medium.com / @assertchris / player - input - 5 bc1b0d80f54 /
 
-    //handle input method instructed by M.Cranford //https://matthewcranford.com/arcade-game-walkthrough-part-4-heros-first-steps/ 
-
-    /*handleInput(input) {
-        switch (input) {
-            case 'left':
-                this.x -= this.horizontal;
-                break;
-            case 'up':
-                this.y -= this.vertical;
-                break;
-            case 'right':
-                this.x += this.horizontal;
-                break;
-            case 'down':
-                this.y += this.vertical;
-                break;
-        }
-        this.isMoving = true;
-    }*/
-
     //switch code instructed by R.Bloomfield
     handleInput(input) {
         switch (input) {
@@ -82,20 +83,6 @@ class Player extends Entity {
         this.isMoving = true;
     }
 }
-
-/*handleInput code from Sandra Israel https://github.com/sandraisrael/fend-arcade-game/blob/master/js/app.js
-handleInput(allowedKeys) {
-    if (allowedKeys === 'left' && this.x > 33) {
-        this.x -= 200;
-    } else if (allowedKeys === 'up' && this.y > 18) {
-        this.y -= 80;
-    } else if (allowedKeys === 'right' && this.x < 200) {
-        this.x += 100;
-    } else if (allowedKeys === 'down' && this.y < 380) {
-        this.y += 80;
-    }
-    // this.move = true;
-}*/
 
 //https://jlongster.com/Making-Sprite-based-Games-with-Canvas
 //https://code.tutsplus.com/articles/html5-avoider-game-tutorial-multiple-moving-enemies--active-9956
@@ -119,10 +106,5 @@ class Enemy extends Entity {
     }
 }
 
-//TODO: player needs to render
-//TODO: bugs need to render
-//TODO: player needs to move
-//TODO: player needs to stay in window
-//TODO: bugs need to move
 //TODO: need a function to check collisions
 //TODO: need a win function

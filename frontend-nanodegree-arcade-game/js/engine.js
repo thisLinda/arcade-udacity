@@ -83,6 +83,16 @@ const Engine = (function (global) {
         //checkCollisions();
     }
 
+    //checkCollisions instructed by R.Bloomfield
+    /*function checkCollisions() {
+        allEnemies.forEach((Enemy) => {
+            if (Enemy.checkCollisions(Player) || Player.checkCollisions(Enemy)) {
+                player.x = 2;
+                player.y = 5;
+            }
+        });
+    }*/
+
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
@@ -164,7 +174,7 @@ const Engine = (function (global) {
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() { //check Rodrick's/others code for how this works
+    function reset() { //check other code for how this works if used at all
         // noop
     }
 
