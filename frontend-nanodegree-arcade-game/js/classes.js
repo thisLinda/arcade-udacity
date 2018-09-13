@@ -47,11 +47,12 @@ class Entity {
 
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
     //https://medium.com/@assertchris/collision-detection-b8bf655cb672
+
     //collision code instructed by R.Bloomfield
 
     checkCollisions(playerOrEnemy) {
         if (this.y === playerOrEnemy.y) {
-            if (this.x >= playerOrEnemy.x - 0.5 && this.x <= playerOrEnemy.x + 0.5) {
+            if (this.x >= playerOrEnemy.x - 0.2 && this.x <= playerOrEnemy.x + 0.2) {
                 return true;
             }
         } else {
@@ -63,19 +64,24 @@ class Entity {
 class Player extends Entity {
     constructor() {
         super();
-        //this.horizontal = 101;
-        //this.vertical = 83;
-        //this.x = x;
-        //this.y = y;
         this.sprite = 'images/char-cat-girl.png';
+        this.win = false;
         this.isMoving = false;
-        //this.win = false;
     }
 
-    /*(render() {
+    update(dt) {
+        super.update();
+        if (this.outOfBoundsY && !this.isMoving && !this.win) {
+            alert("win");
+            this.win = true;
+        }
+    }
+
+    render() {
         super.render();
-        //this.move = false;
-    }*/
+        this.isMoving = false;
+    }
+
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
     //https:/ / medium.com / @assertchris / player - input - 5 bc1b0d80f54 /
 
