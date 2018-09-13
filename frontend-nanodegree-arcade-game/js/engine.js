@@ -80,18 +80,18 @@ const Engine = (function (global) {
      */
     function update(dt) {
         updateEntities(dt);
-        //checkCollisions();
+        checkCollisions();
     }
 
     //checkCollisions instructed by R.Bloomfield
-    /*function checkCollisions() {
-        allEnemies.forEach((Enemy) => {
-            if (Enemy.checkCollisions(Player) || Player.checkCollisions(Enemy)) {
+    function checkCollisions() {
+        allEnemies.forEach(enemy => {
+            if (enemy.checkCollisions(player) || player.checkCollisions(enemy)) {
                 player.x = 2;
                 player.y = 5;
             }
         });
-    }*/
+    }
 
     /* This is called by the update function and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
