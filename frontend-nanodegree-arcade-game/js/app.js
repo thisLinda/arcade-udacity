@@ -14,9 +14,6 @@ const player = new Player();
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3);
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
-
 document.addEventListener('keyup', function (e) {
     let allowedKeys = {
         37: 'left',
@@ -25,5 +22,18 @@ document.addEventListener('keyup', function (e) {
         40: 'down',
     };
 
-    player.handleInput(allowedKeys[e.keyCode]); //TODO: need to create handleInput on player, the method itself is complete
+    player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//document.getElementById("win-modal").style.display = "none";
+
+document.querySelector("#restart").addEventListener("click", init);
+
+document.querySelector("#win-modal button").addEventListener("click", init);
+
+document.querySelector(".close-button").addEventListener("click", init);
+
+/*function resetGame() {
+    document.getElementById("win-modal").style.display = "none";
+    //init();*/
+}*/

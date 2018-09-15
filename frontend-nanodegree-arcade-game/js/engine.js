@@ -13,6 +13,19 @@ TODO: update var
  * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
+//document.getElementById("win-modal").style.display = "none";
+
+/*document.querySelector("#restart").addEventListener("click", resetGame);
+
+document.querySelector("#win-modal button").addEventListener("click", resetGame);
+
+document.querySelector(".close-button").addEventListener("click", resetGame);
+
+function resetGame() {
+    document.getElementById("win-modal").style.display = "none";
+    //init();
+}
+*/
 
 const Engine = (function (global) {
     /* Predefine the variables we'll be using within this scope,
@@ -32,6 +45,9 @@ const Engine = (function (global) {
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
      */
+
+    //document.getElementById("win-modal").style.display = "none";
+
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -64,9 +80,13 @@ const Engine = (function (global) {
      * game loop.
      */
     function init() {
+        //document.getElementById("win-modal").style.display = "none";
         reset();
+        //document.getElementById("win-modal").style.display = "none";
         lastTime = Date.now();
+        //document.getElementById("win-modal").style.display = "none";
         main();
+        //document.getElementById("win-modal").style.display = "none";
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -174,14 +194,27 @@ const Engine = (function (global) {
      * handle game reset states - maybe a new game menu or a game over screen
      * those sorts of things. It's only called once by the init() method.
      */
-    function reset() { //check other code for how this works if used at all
-        // noop
-    }
 
-    /* Go ahead and load all of the images we know we're going to need to
-     * draw our game level. Then set init as the callback method, so that when
-     * all of these images are properly loaded our game will start.
-     */
+    //from memory game
+    /*function resetGame() {
+        document.getElementById("win-modal").style.display = "none";
+        //init();
+    }
+    /*from memory game
+        function gameOver() {
+            document.getElementById("win-modal").style.display = "flex";
+
+            let finalStars = document.querySelector(".stars").innerHTML;
+
+            document.getElementById("numMoves").innerHTML = moves + " Moves";
+            document.getElementById("finalStars").innerHTML = finalStars;
+            displayDiffOnModal(timer);
+        };
+
+        /* Go ahead and load all of the images we know we're going to need to
+         * draw our game level. Then set init as the callback method, so that when
+         * all of these images are properly loaded our game will start.
+         */
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',
