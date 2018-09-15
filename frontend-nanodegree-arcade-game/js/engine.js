@@ -26,6 +26,7 @@ function resetGame() {
     //init();
 }
 */
+//modal.style.display = "none";
 
 const Engine = (function (global) {
     /* Predefine the variables we'll be using within this scope,
@@ -47,7 +48,6 @@ const Engine = (function (global) {
      */
 
     //document.getElementById("win-modal").style.display = "none";
-
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -73,6 +73,8 @@ const Engine = (function (global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main); //remember, win = window not game won!
+
+        //win-modal.style.display = 'none';
     }
 
     /* This function does some initial setup that should only occur once,
@@ -81,7 +83,7 @@ const Engine = (function (global) {
      */
     function init() {
         //document.getElementById("win-modal").style.display = "none";
-        reset();
+        resetGame();
         //document.getElementById("win-modal").style.display = "none";
         lastTime = Date.now();
         //document.getElementById("win-modal").style.display = "none";

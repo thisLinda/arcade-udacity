@@ -25,15 +25,16 @@ document.addEventListener('keyup', function (e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
+
+
 //document.getElementById("win-modal").style.display = "none";
 
-document.querySelector("#restart").addEventListener("click", init);
+//document.querySelector('#restart').addEventListener('click', resetGame);
 
-document.querySelector("#win-modal button").addEventListener("click", init);
+document.querySelector('#win-modal button').addEventListener('click', resetGame);
 
-document.querySelector(".close-button").addEventListener("click", init);
+document.querySelector('.close-button').addEventListener('click', resetGame);
 
 /*function resetGame() {
     document.getElementById("win-modal").style.display = "none";
     //init();*/
-}*/
