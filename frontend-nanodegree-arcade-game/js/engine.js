@@ -13,20 +13,6 @@ TODO: update var
  * This engine makes the canvas' context (ctx) object globally available to make
  * writing app.js a little simpler to work with.
  */
-//document.getElementById("win-modal").style.display = "none";
-
-/*document.querySelector("#restart").addEventListener("click", resetGame);
-
-document.querySelector("#win-modal button").addEventListener("click", resetGame);
-
-document.querySelector(".close-button").addEventListener("click", resetGame);
-
-function resetGame() {
-    document.getElementById("win-modal").style.display = "none";
-    //init();
-}
-*/
-//modal.style.display = "none";
 
 const Engine = (function (global) {
     /* Predefine the variables we'll be using within this scope,
@@ -47,7 +33,6 @@ const Engine = (function (global) {
      * and handles properly calling the update and render methods.
      */
 
-    //document.getElementById("win-modal").style.display = "none";
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -73,8 +58,6 @@ const Engine = (function (global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main); //remember, win = window not game won!
-
-        //win-modal.style.display = 'none';
     }
 
     /* This function does some initial setup that should only occur once,
@@ -82,13 +65,9 @@ const Engine = (function (global) {
      * game loop.
      */
     function init() {
-        //document.getElementById("win-modal").style.display = "none";
         resetGame();
-        //document.getElementById("win-modal").style.display = "none";
         lastTime = Date.now();
-        //document.getElementById("win-modal").style.display = "none";
         main();
-        //document.getElementById("win-modal").style.display = "none";
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -128,8 +107,6 @@ const Engine = (function (global) {
         });
         player.update();
     }
-
-
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -197,26 +174,10 @@ const Engine = (function (global) {
      * those sorts of things. It's only called once by the init() method.
      */
 
-    //from memory game
-    /*function resetGame() {
-        document.getElementById("win-modal").style.display = "none";
-        //init();
-    }
-    /*from memory game
-        function gameOver() {
-            document.getElementById("win-modal").style.display = "flex";
-
-            let finalStars = document.querySelector(".stars").innerHTML;
-
-            document.getElementById("numMoves").innerHTML = moves + " Moves";
-            document.getElementById("finalStars").innerHTML = finalStars;
-            displayDiffOnModal(timer);
-        };
-
-        /* Go ahead and load all of the images we know we're going to need to
-         * draw our game level. Then set init as the callback method, so that when
-         * all of these images are properly loaded our game will start.
-         */
+    /* Go ahead and load all of the images we know we're going to need to
+     * draw our game level. Then set init as the callback method, so that when
+     * all of these images are properly loaded our game will start.
+     */
     Resources.load([
         'images/stone-block.png',
         'images/water-block.png',
@@ -231,5 +192,6 @@ const Engine = (function (global) {
      * object when run in a browser) so that developers can use it more easily
      * from within their app.js files.
      */
-    global.ctx = ctx; //may be issues here in run because engine.js (with canvas) is called last--per Rodrick, that's not straight in my head yet
+    global.ctx = ctx;
+
 })(this);

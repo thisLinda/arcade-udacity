@@ -1,9 +1,6 @@
 //using ES 6, rather than .prototype in app.js as provided
 /* Rodrick Bloomfield code instruction from zoom meeting https://zoom.us/recording/play/aulotDlzKFegQFIJTaTzKgWvNkVsYtlwO454vL1UPE1Cm6lOUBQCtfVurPOIAGAS?startTime=1529542978000*/
 
-let modal = document.getElementById('#winModal');
-//let modalContent = document.getElementById('modal-content');
-
 class Entity {
     constructor() {
         this.sprite = 'images/';
@@ -47,26 +44,17 @@ class Player extends Entity {
     update(dt) {
         super.update();
         if (this.outOfBoundsY && !this.isMoving && !this.win) {
-            //document.getElementById("win-modal");
+            document.getElementById('win-modal');
             //alert("win");
             this.win = true;
-            this.modal();
-            this.resetGame();
+            //this.modal();
+            //this.resetGame();
+            object.reload(forcedReload)
         }
     }
 
     render() {
         super.render();
-    }
-
-    modal() {
-        //document.getElementById('win-modal');
-        //modal.style.display = "none"; VSC alerted me to an error with this line of code and offered several solutions, choosing the first I get newMethod() and I don't know what to do  sigh
-    }
-
-    resetGame() {
-        this.x = 2;
-        this.y = 5;
         this.isMoving = false;
     }
 
