@@ -1,6 +1,9 @@
-frontend-nanodegree-arcade-game
-===============================
+# frontend-nanodegree-arcade-game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Welcome to my Udacity Arcade Game project three completed with the assistance of multiple student resources including Rodrick Bloomfield's video walkthrough, Matt Cranford's blog walkthrough, and Ryan Boris's video walkthrough. If I used the code instructed by them it is cited in the comments directly above the code block. I discovered other helpful information via Google search and those are also cited above code. I completed this short course https://www.udemy.com/code-your-first-game/learn/v4/overview to assist me with the game.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+You'll see the game is quite basic, it only fulfills the rubric for game play. I did want to try out CSS grid for responsiveness though; that was simple and fun.
+
+GAME PLAY:
+
+You, my friend, are now the little cat girl. The object of the game is to cross the three lane highway populated by icky bugs traveling at random speeds to get into the water without being hit. You know how much cats love water...probably less than getting hit by a bug but hey, this is a game! Use the up, down, right,left arrows to move your awesome catself on the board. If you collide with a bug, it's back to the grass.

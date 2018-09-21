@@ -12,42 +12,13 @@ class Entity {
         this.outOfBoundsX = this.x > 5;
         this.outOfBoundsY = this.y < 1;
     }
-    /*for (let enemy of allEnemies) {
-        let deltaX = this.x - enemy.x - 15;
-        let deltaY = this.y - enemy.y - 20;
-        let distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        if (distance < 56) {
-            console.log('hit');
-        }
-    }
-    if (this.y < 10) {
-        console.log('yippee!');
-        this.y = 410;
-    }*/
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x * 101, this.y * 83);
     }
-    /*
-        //collision code instructed by Iip Permana 1:1 session with Kaisma Penn-Titley and shared with me via Slack message 9/13/18
-        checkCollisions() {
-            for (let i = 0; i < allEnemies.length; i++)
-              this.width = 50;
-            //this.height = 75; {
-                //Improved collision detection method assistance provided by Lip Permana during one-on-one session 8.19.18
-                if (allEnemies[i].x + allEnemies[i].width >= this.x &&
-                    allEnemies[i].x <= this.x + this.width &&
-                    allEnemies[i].y + allEnemies[i].height >= this.y &&
-                    allEnemies[i].y <= this.y + this.height) {
-                    console.log("collision"); //for testing
-                    //this.restartGame();
-                }
-            }*/
-
 
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection
     //https://medium.com/@assertchris/collision-detection-b8bf655cb672
-
     //collision code instructed by R.Bloomfield
 
     checkCollisions(playerOrEnemy) {
@@ -84,7 +55,6 @@ class Player extends Entity {
 
     //https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
     //https:/ / medium.com / @assertchris / player - input - 5 bc1b0d80f54 /
-
     //switch code instructed by R.Bloomfield
     handleInput(input) {
         switch (input) {
@@ -126,6 +96,3 @@ class Enemy extends Entity {
         }
     }
 }
-
-//TODO: need a function to check collisions
-//TODO: need a win function
